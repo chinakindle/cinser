@@ -41,7 +41,7 @@
     </Reference>
     <Reference Include="ESRI.ArcGIS.Client, Version=2.4.0.851, Culture=neutral, PublicKeyToken=29c6dd6e8553d944, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\ESRI SDKs\WPF\v2.4\DotNet40\ESRI.ArcGIS.Client.dll</HintPath>
+      <HintPath>..\Dlls\ESRI.ArcGIS.Client.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
