@@ -1,0 +1,37 @@
+﻿<dx:DXWindow x:Class="Cinser.Silverlight.Controls.PictrueView" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+           xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+           mc:Ignorable="d"
+           d:DesignWidth="740" d:DesignHeight="550"
+           xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxco="http://schemas.devexpress.com/winfx/2008/xaml/controls" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:a="http://schemas.devexpress.com/winfx/2008/xtr"
+           Title="图片浏览">
+    <Grid x:Name="LayoutRoot" Background="White" Margin="0" Height="520" Width="740" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.Resources>
+            <TransformGroup x:Key="ImageTransformResource">
+                <ScaleTransform />
+                <TranslateTransform/>
+            </TransformGroup>
+        </Grid.Resources>
+        <ScrollViewer Grid.Row="0"  Margin="0" HorizontalAlignment="Center" Name="scrollViewer1" VerticalAlignment="Center"  VerticalScrollBarVisibility="Hidden" Cursor="SizeNESW" >
+            <ContentControl Margin="0" Name="contentControl1"  MouseLeftButtonDown="contentControl1_MouseLeftButtonDown" MouseLeftButtonUp="contentControl1_MouseLeftButtonUp" MouseMove="contentControl1_MouseMove" MouseWheel="contentControl1_MouseWheel" >
+                <Image   Name="img" Stretch="Fill"  Source="/SilverlightApplicationWCF;component/0824wallpaper-6_1600.jpg" RenderTransform="{StaticResource ImageTransformResource}" />
+            </ContentControl>
+        </ScrollViewer>
+        <StackPanel Grid.Row="1"  VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" >
+            <Button x:Name="btnPrev" Content="上一张" Width="75"  Margin="5" Click="btnPrev_Click"/>            
+            <TextBlock  x:Name="lbInfo" Text="1/10"  VerticalAlignment="Center" Margin="10,0"  />
+            <Button x:Name="btnNext" Content="下一张" Width="75"  Margin="5" Click="btnNext_Click"/>
+            <!--<Button x:Name="btnDown"   Margin="5" Click="btnDown_Click">
+                <Button.Content>
+                    <Image Source="/CT.Mine.UIs;component/Images/down.png" />
+                </Button.Content>
+            </Button>-->
+        </StackPanel>
+    </Grid>
+</dx:DXWindow>

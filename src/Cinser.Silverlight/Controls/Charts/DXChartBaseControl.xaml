@@ -1,0 +1,29 @@
+﻿<UserControl xmlns:sdk="http://schemas.microsoft.com/winfx/2006/xaml/presentation/sdk"  x:Class="Cinser.Silverlight.Controls.Charts.DXChartBaseControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <sdk:TabControl Margin="5" TabStripPlacement="Right" HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"  Name="tabControl1" VerticalAlignment="Top"  FlowDirection="LeftToRight"  SelectionChanged="tabControl1_SelectionChanged">
+            <sdk:TabItem Header="统计图" Name="tabItem1" >
+                <Grid x:Name="gridChart" />
+            </sdk:TabItem>
+            <sdk:TabItem Header="报表" Name="tabItem2" >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="60"/>
+                    </Grid.RowDefinitions>
+                    <Grid x:Name="gridTable" Grid.Row="0"/>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Button Content="导出" x:Name="btnExport" Height="35" Width="75" FontSize="13"  Margin="10,0" Click="btnExport_Click" />
+                        <Button Content="打印" x:Name="btnPrint"  Height="35" Width="75" FontSize="13" Click="btnPrint_Click"  />
+                    </StackPanel>
+                </Grid>
+            </sdk:TabItem>
+        </sdk:TabControl>
+    </Grid>
+</UserControl>

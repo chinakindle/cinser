@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="Cinser.Silverlight.Controls.Charts.Pie2DControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <dxc:ChartControl Name="chart" BorderThickness="0" CustomDrawSeriesPoint="chart_CustomDrawSeriesPoint" EnableAnimation="True">
+            <dxc:ChartControl.Diagram>
+                <dxc:SimpleDiagram2D>
+                    <dxc:SimpleDiagram2D.Series>
+                        <dxc:PieSeries2D x:Name="Series" ArgumentScaleType="Qualitative" ArgumentDataMember="Argument" ValueDataMember="Value" AnimationAutoStartMode="SetStartState" HoleRadiusPercent="0" Rotation="0" SweepDirection="Clockwise">
+                            <dxc:PieSeries2D.PointAnimation>
+                                <dxc:Pie2DFlyInAnimation Duration="0:0:1.5" PointOrder="Random" />
+                            </dxc:PieSeries2D.PointAnimation>
+                            <dxc:PieSeries2D.PointOptions>
+                                <dxc:PointOptions PointView="ArgumentAndValues">
+                                    <dxc:PointOptions.ValueNumericOptions>
+                                        <dxc:NumericOptions Format="Percent" Precision="0" />
+                                    </dxc:PointOptions.ValueNumericOptions>
+                                </dxc:PointOptions>
+                            </dxc:PieSeries2D.PointOptions>
+                            <dxc:PieSeries2D.Label>
+                                <dxc:SeriesLabel Visible="True"  RenderMode="RectangleConnectedToCenter" />
+                            </dxc:PieSeries2D.Label>                            
+                        </dxc:PieSeries2D>
+                    </dxc:SimpleDiagram2D.Series>
+                </dxc:SimpleDiagram2D>
+            </dxc:ChartControl.Diagram>
+            <dxc:ChartControl.Titles>
+                <dxc:Title Dock="Top" x:Name="chartTitle" HorizontalAlignment="Center" FontSize="24"></dxc:Title>
+                <dxc:Title FontSize="12" Foreground="Silver" Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="cTitle"/>
+            </dxc:ChartControl.Titles>
+        </dxc:ChartControl>
+    </Grid>
+</UserControl>

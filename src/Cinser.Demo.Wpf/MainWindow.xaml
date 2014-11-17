@@ -1,0 +1,41 @@
+﻿<Window x:Class="Cinser.Demo.Wpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl >
+            <TabItem Header="AccessTest" Name="tabItem1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Content="AddPublishData" Height="23" HorizontalAlignment="Left"  Name="btnAccessPublishData" VerticalAlignment="Top" Width="112" Click="btnAccessPublishData_Click" />
+                        <Button Content="GetPublishData" Height="23" HorizontalAlignment="Left"  Name="btnAccessGetPublishData" VerticalAlignment="Top" Width="112" Click="btnAccessGetPublishData_Click" />
+                        <Button Content="DeletePublishData" Height="23" HorizontalAlignment="Left"  Name="btnAccessDelPublishData" VerticalAlignment="Top" Width="112" Click="btnAccessDelPublishData_Click" />
+                        <Button Content="UpdatePublishData" Height="23" HorizontalAlignment="Left"  Name="btnAccessUpdatePublishData" VerticalAlignment="Top" Width="154" Click="btnAccessUpdatePublishData_Click" />
+                        
+                    </StackPanel>
+                    <DataGrid x:Name="dataGrid" Grid.Row="1" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="OracleTest">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Content="Add" Height="23" HorizontalAlignment="Left"  Name="btnOracleAddPublishData" VerticalAlignment="Top" Width="112" Click="btnOracleAddPublishData_Click" />
+                        <Button Content="GetData" Height="23" HorizontalAlignment="Left"  Name="btnOracleGetPublishData" VerticalAlignment="Top" Width="112" Click="btnOracleGetPublishData_Click" />
+                        <Button Content="Delete" Height="23" HorizontalAlignment="Left"  Name="btnOracleDelPublishData" VerticalAlignment="Top" Width="112" Click="btnOracleDelPublishData_Click" />
+                        <Button Content="Update" Height="23" HorizontalAlignment="Left"  Name="btnOracleUpdatePublishData" VerticalAlignment="Top" Width="154" Click="btnOracleUpdatePublishData_Click" />
+
+                    </StackPanel>
+                    <DataGrid x:Name="dataGridOracle" Grid.Row="1" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Cinser.Silverlight.Controls.Charts.ConstantLinesControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <dxc:ChartControl Name="chart" BoundDataChanged="chart_BoundDataChanged" MouseMove="chart_MouseMove" MouseLeave="chart_MouseLeave" BorderThickness="0">
+            <dxc:ChartControl.Titles>
+                <dxc:Title x:Name="Title"  HorizontalAlignment="Center" />
+                <dxc:Title FontSize="12" Foreground="Silver" Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="cTitle"/>
+            </dxc:ChartControl.Titles>
+            <dxc:ChartControl.Diagram>
+                <dxc:XYDiagram2D>
+                    <dxc:XYDiagram2D.AxisY>
+                        <dxc:AxisY2D>
+                            <dxc:AxisY2D.Title>
+                                <dxc:AxisTitle x:Name="yTitle" Content="" />
+                            </dxc:AxisY2D.Title>
+                        </dxc:AxisY2D>
+                    </dxc:XYDiagram2D.AxisY>
+                    <dxc:XYDiagram2D.AxisX>
+                        <dxc:AxisX2D DateTimeMeasureUnit="Hour" DateTimeGridAlignment="Hour">
+                            <dxc:AxisX2D.Title>
+                                <dxc:AxisTitle x:Name="xTitle" Content="" />
+                            </dxc:AxisX2D.Title>
+                            <dxc:AxisX2D.DateTimeOptions>
+                                <dxc:DateTimeOptions Format="Custom" FormatString="MM-dd H:mm" />
+                            </dxc:AxisX2D.DateTimeOptions>
+                        </dxc:AxisX2D>
+                    </dxc:XYDiagram2D.AxisX>
+                    <dxc:XYDiagram2D.Series>
+                        <dxc:LineSeries2D x:Name="Series" ArgumentScaleType="DateTime" ArgumentDataMember="Argument" ValueDataMember="Value" AnimationAutoStartMode="SetStartState">
+                            <dxc:LineSeries2D.SeriesAnimation>
+                                <dxc:Line2DUnwindAnimation />
+                            </dxc:LineSeries2D.SeriesAnimation>
+                            <dxc:LineSeries2D.PointAnimation>
+                                <dxc:Marker2DFadeInAnimation BeginTime="00:00:00.200" PointDelay="00:00:00.050" />
+                            </dxc:LineSeries2D.PointAnimation>
+                            <dxc:LineSeries2D.Label>
+                                <dxc:SeriesLabel dxc:MarkerSeries2D.Angle="90" ResolveOverlappingMode="JustifyAllAroundPoint" />
+                            </dxc:LineSeries2D.Label>
+                        </dxc:LineSeries2D>
+                    </dxc:XYDiagram2D.Series>
+                </dxc:XYDiagram2D>
+            </dxc:ChartControl.Diagram>
+        </dxc:ChartControl>
+        <Popup Name="pointTooltip">
+            <dxe:TextEdit x:Name="ttContent" IsReadOnly="True" />
+        </Popup>
+    </Grid>
+</UserControl>

@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Cinser.Silverlight.Controls.Charts.ScrollingZoomingControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+    <Grid>
+        <dxc:ChartControl Name="chart" BorderThickness="0" MouseMove="chart_MouseMove" MouseLeave="chart_MouseLeave">
+            <dxc:ChartControl.Titles>
+                <dxc:Title x:Name="Title"  HorizontalAlignment="Center" />
+                <dxc:Title FontSize="12" Foreground="Silver" Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="cTitle"/>
+            </dxc:ChartControl.Titles>
+            <dxc:ChartControl.Diagram>
+                <dxc:XYDiagram2D EnableAxisXNavigation="True" EnableAxisYNavigation="True">
+                    <dxc:XYDiagram2D.AxisYScrollBarOptions>
+                        <dxc:ScrollBarOptions Alignment="Near" Visible="False" />
+                    </dxc:XYDiagram2D.AxisYScrollBarOptions>
+                    <dxc:XYDiagram2D.AxisXScrollBarOptions>
+                        <dxc:ScrollBarOptions Alignment="Near" Visible="True" />
+                    </dxc:XYDiagram2D.AxisXScrollBarOptions>
+                    <dxc:XYDiagram2D.AxisY>
+                        <dxc:AxisY2D>
+                            <dxc:AxisY2D.Label>
+                                <dxc:AxisLabel BeginText="" />
+                            </dxc:AxisY2D.Label>
+                            <dxc:AxisY2D.Title>
+                                <dxc:AxisTitle x:Name="yTitle" Content="" />
+                            </dxc:AxisY2D.Title>
+                        </dxc:AxisY2D>
+                    </dxc:XYDiagram2D.AxisY>
+                    <dxc:XYDiagram2D.AxisX>
+                        <dxc:AxisX2D>
+                            <dxc:AxisX2D.Range>
+                                <dxc:AxisRange SideMarginsEnabled="True" />
+                            </dxc:AxisX2D.Range>
+                            <dxc:AxisX2D.Title>
+                                <dxc:AxisTitle x:Name="xTitle" Content="" />
+                            </dxc:AxisX2D.Title>
+                        </dxc:AxisX2D>
+                    </dxc:XYDiagram2D.AxisX>
+                    <dxc:XYDiagram2D.Series>
+                        
+                    </dxc:XYDiagram2D.Series>
+                </dxc:XYDiagram2D>
+            </dxc:ChartControl.Diagram>
+            <dxc:ChartControl.Legend>
+                <dxc:Legend VerticalPosition="Top" HorizontalPosition="Left" Orientation="Horizontal" />
+            </dxc:ChartControl.Legend>
+        </dxc:ChartControl>
+        <Popup Name="pointTooltip">
+            <dxe:TextEdit x:Name="ttContent" IsReadOnly="True" />
+        </Popup>
+    </Grid>
+</UserControl>

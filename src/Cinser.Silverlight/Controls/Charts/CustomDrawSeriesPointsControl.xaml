@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Cinser.Silverlight.Controls.Charts.CustomDrawSeriesPointsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <Grid>
+        <dxc:ChartControl Name="chart" BorderThickness="0"  CustomDrawSeriesPoint="chart_CustomDrawSeriesPoint">
+            <dxc:ChartControl.Titles>
+                <dxc:Title x:Name="Title"  HorizontalAlignment="Center" />
+                <dxc:Title FontSize="12" Foreground="Silver" Dock="Bottom" HorizontalAlignment="Right" Margin="0,10,0,0" x:Name="cTitle"/>
+            </dxc:ChartControl.Titles>
+            <dxc:ChartControl.Diagram>
+                <dxc:XYDiagram2D>
+                    <dxc:XYDiagram2D.AxisY>
+                        <dxc:AxisY2D x:Name="_y" GridSpacing="10">
+                            <!--<dxc:AxisY2D.Strips>
+                                <dxc:Strip AxisLabelText="红色预警" MaxLimit="60" MinLimit="40" Brush="#FFFFDBDB" BorderColor="#00BB002F" />
+                                <dxc:Strip AxisLabelText="黄色预警" MaxLimit="40" MinLimit="20" Brush="#FFFFF6BF" BorderColor="#00BB002F" />
+                                <dxc:Strip AxisLabelText="安全雨量" MaxLimit="20" MinLimit="0" Brush="#FFD6F39F" BorderColor="#00BB002F" />
+                            </dxc:AxisY2D.Strips>
+                            <dxc:AxisY2D.Range>
+                                <dxc:AxisRange MaxValue="60" MinValue="0" />
+                            </dxc:AxisY2D.Range>-->
+                            <dxc:AxisY2D.Title>
+                                <dxc:AxisTitle x:Name="yTitle" Content="" />
+                            </dxc:AxisY2D.Title>
+                        </dxc:AxisY2D>
+                    </dxc:XYDiagram2D.AxisY>
+                    <dxc:XYDiagram2D.AxisX>
+                        <dxc:AxisX2D x:Name="_x" Visible="True" DateTimeMeasureUnit="Hour" DateTimeGridAlignment="Hour">
+                            <dxc:AxisX2D.Title>
+                                <dxc:AxisTitle x:Name="xTitle" Content="" />
+                            </dxc:AxisX2D.Title>
+                            <dxc:AxisX2D.DateTimeOptions>
+                                <dxc:DateTimeOptions Format="Custom" FormatString="MM-dd H:mm" />
+                            </dxc:AxisX2D.DateTimeOptions>
+                        </dxc:AxisX2D>
+                    </dxc:XYDiagram2D.AxisX>
+                    <dxc:XYDiagram2D.Series>
+                        <dxc:BarSideBySideSeries2D x:Name="Series" ArgumentDataMember="Argument" ValueDataMember="Value"  ArgumentScaleType="Numerical" AnimationAutoStartMode="SetStartState">
+                            <dxc:BarSideBySideSeries2D.PointAnimation>
+                                <dxc:Bar2DDropInAnimation PointDelay="00:00:00.050"/>
+                                </dxc:BarSideBySideSeries2D.PointAnimation>
+                            <dxc:BarSideBySideSeries2D.Label>
+                                <dxc:SeriesLabel ConnectorVisible="True" ResolveOverlappingMode="Default" Visible="True" />
+                            </dxc:BarSideBySideSeries2D.Label>
+                        </dxc:BarSideBySideSeries2D>
+                    </dxc:XYDiagram2D.Series>
+                </dxc:XYDiagram2D>
+            </dxc:ChartControl.Diagram>
+        </dxc:ChartControl>
+    </Grid>
+</UserControl>
